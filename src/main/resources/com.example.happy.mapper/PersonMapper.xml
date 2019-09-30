@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.happy.mapper.PersonMapper">
+
+    <select id="queryPersonById" parameterType="int" resultType="com.example.happy.domain.PersonInfo">
+            select ID,NAME from TEST_PERSON WHERE ID=#{id}
+    </select>
+
+    <insert id="insertPerson" parameterType="com.example.happy.domain.PersonInfo">
+            insert into TEST_PERSON(ID,NAME) VALUES (#{id},#{name})
+    </insert>
+
+    <delete id="deletePersonById" parameterType="int">
+            delete from TEST_PERSON WHERE ID=#{id}
+    </delete>
+
+    <update id="updatePerson" parameterType="com.example.happy.domain.PersonInfo">
+            update TEST_PERSON SET NAME=#{name} where ID=#{id}
+    </update>
+
+    <select id="queryPersonList" resultType="com.example.happy.domain.PersonInfo" >
+        select ID,NAME FROM TEST_PERSON
+    </select>
+</mapper>
