@@ -39,6 +39,10 @@ public class PersonManageController {
         return "update success....";
     }
 
+    /**
+     * 查询全部数据
+     * @return
+     */
     @RequestMapping(value = "/queryAll")
     public String queryAll() {
         List<PersonInfo> list = personManageService.queryPersonList();
